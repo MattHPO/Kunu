@@ -12,11 +12,11 @@ import com.taipei.yanghaobo.kunu.db.DogEntry;
 @Dao
 public interface DogDao {
 
-    @Query("SELECT * FROM dog_table;")
+    @Query("SELECT * FROM dog_table")
     DataSource.Factory<Integer, DogEntry> getAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(DogEntry dog);
+    void insert(DogEntry... dogEntries);
 
     @Delete
     void delete(DogEntry dog);

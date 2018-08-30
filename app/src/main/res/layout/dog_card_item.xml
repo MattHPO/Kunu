@@ -13,11 +13,12 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/dog_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/photo"
+            android:id="@+id/dog_card_photo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
@@ -30,16 +31,17 @@
             app:srcCompat="@drawable/snow_shake" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/dog_card_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/photo"
-            app:layout_constraintStart_toStartOf="@+id/photo"
-            app:layout_constraintTop_toBottomOf="@+id/photo" />
+            app:layout_constraintEnd_toEndOf="@+id/dog_card_photo"
+            app:layout_constraintStart_toStartOf="@+id/dog_card_photo"
+            app:layout_constraintTop_toBottomOf="@+id/dog_card_photo" />
 
 
     </android.support.constraint.ConstraintLayout>
