@@ -29,7 +29,9 @@ public class KunuRepository {
 
         if (INSTANCE == null) {
             synchronized (LOCK) {
-                INSTANCE = new KunuRepository(dogDao);
+                if (INSTANCE == null) {
+                    INSTANCE = new KunuRepository(dogDao);
+                }
             }
         }
         return INSTANCE;
@@ -38,13 +40,18 @@ public class KunuRepository {
     /**
      * 取得所有狗狗資料
      *
-     * @return
-     *      狗狗圖鑑全
+     * @return 狗狗圖鑑全
      */
-    public LiveData<PagedList<DogEntry>> getDogAll(){
+    public LiveData<PagedList<DogEntry>> getDogAll() {
 
-        DataSource.Factory<Integer, DogEntry> factory = mDogDao.getAll();
+        DataSource.Factory factory = mDogDao.getAll();
         //noinspection unchecked
         return (LiveData<PagedList<DogEntry>>) new LivePagedListBuilder(factory, sPageSize).build();
+//        return  new LivePagedListBuilder(factory,
+//                new PagedList.Config.Builder()
+//                .setPageSize(10)
+//                .setInitialLoadSizeHint(10)
+//                .setEnablePlaceholders(true)
+//                .build()).build();
     }
 }

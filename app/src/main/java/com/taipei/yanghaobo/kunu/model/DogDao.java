@@ -12,7 +12,7 @@ import com.taipei.yanghaobo.kunu.db.DogEntry;
 @Dao
 public interface DogDao {
 
-    @Query("SELECT * FROM dog_table")
+    @Query("SELECT * FROM dog_table ORDER BY id ASC")
     DataSource.Factory<Integer, DogEntry> getAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
