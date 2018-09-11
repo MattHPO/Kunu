@@ -4,6 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import com.taipei.yanghaobo.kunu.data.DataConverters;
@@ -12,7 +14,7 @@ import java.util.Date;
 
 @TypeConverters(DataConverters.class)
 @Entity(tableName = "dog_table")
-public class DogEntry {
+public class DogEntry implements Parcelable {
 // , indices = {@Index(value = {"date"}, unique = true)}
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -140,4 +142,51 @@ public class DogEntry {
     public boolean isIs_valid() {
         return is_valid;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name_cn);
+        dest.writeString(this.name_en);
+        dest.writeString(this.other_names);
+        dest.writeString(this.nicknames);
+        dest.writeString(this.origin);
+        dest.writeString(this.type);
+        dest.writeString(this.info);
+        dest.writeInt(this.photo_id);
+        dest.writeLong(this.update_dt != null ? this.update_dt.getTime() : -1);
+        dest.writeByte(this.is_valid ? (byte) 1 : (byte) 0);
+    }
+
+    protected DogEntry(Parcel in) {
+        this.id = in.readInt();
+        this.name_cn = in.readString();
+        this.name_en = in.readString();
+        this.other_names = in.readString();
+        this.nicknames = in.readString();
+        this.origin = in.readString();
+        this.type = in.readString();
+        this.info = in.readString();
+        this.photo_id = in.readInt();
+        long tmpUpdate_dt = in.readLong();
+        this.update_dt = tmpUpdate_dt == -1 ? null : new Date(tmpUpdate_dt);
+        this.is_valid = in.readByte() != 0;
+    }
+
+    public static final Parcelable.Creator<DogEntry> CREATOR = new Parcelable.Creator<DogEntry>() {
+        @Override
+        public DogEntry createFromParcel(Parcel source) {
+            return new DogEntry(source);
+        }
+
+        @Override
+        public DogEntry[] newArray(int size) {
+            return new DogEntry[size];
+        }
+    };
 }

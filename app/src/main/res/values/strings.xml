@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Kunu</string>
-    <string name="main_dog_photo">狗狗們的萌照</string>
+    <string name="kunu_app_name">Kunu</string>
+    <string name="kunu_photo_dog">狗狗們的萌照</string>
+    <string name="kunu_favorite_dog">最愛的狗狗</string>
+    <string name="kunu_game_dog">認識狗狗們</string>
+    <string name="kunu_stock_dog">賺錢養狗狗</string>
+    <string name="kunu_settings">設定</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kunu_settings_info">說明</string>
+    <string name="kunu_pref_nt">每日狗狗賣萌通知</string>
 </resources>

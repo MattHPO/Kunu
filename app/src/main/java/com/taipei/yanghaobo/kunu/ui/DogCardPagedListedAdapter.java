@@ -14,32 +14,42 @@ import android.widget.TextView;
 import com.taipei.yanghaobo.kunu.R;
 import com.taipei.yanghaobo.kunu.db.DogEntry;
 
-public class MainPagedAdapter extends PagedListAdapter<DogEntry, MainPagedAdapter.DogCardViewHolder> {
+public class DogCardPagedListedAdapter extends PagedListAdapter<DogEntry, DogCardPagedListedAdapter.DogCardViewHolder> {
 
     private final LayoutInflater mInflater;
 
-    public MainPagedAdapter(Context context) {
+    private DogCardOnClickedListener mDogCardOnClickedListener;
+
+    public interface DogCardOnClickedListener {
+        void onDogItemClick(DogEntry dogEntry);
+    }
+
+    public DogCardPagedListedAdapter(Context context) {
         super(sDogEntryItemCallback);
         mInflater = LayoutInflater.from(context);
     }
 
-    class DogCardViewHolder extends ViewHolder{
-//        final CardView mCardView;
+    class DogCardViewHolder extends ViewHolder {
+        //        final CardView mCardView;
         private final ImageView mImageView;
         private final TextView mTextView;
 
         public DogCardViewHolder(@NonNull View itemView) {
             super(itemView);
 //            mCardView = itemView.findViewById(R.id.dog_card);
-            this.mImageView = itemView.findViewById(R.id.dog_card_photo);
-            this.mTextView = itemView.findViewById(R.id.dog_card_text);
+            this.mImageView = itemView.findViewById(R.id.img_dog_photo);
+            this.mTextView = itemView.findViewById(R.id.tv_dog_name);
         }
     }
 
     @NonNull
     @Override
     public DogCardViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemView = mInflater.inflate(R.layout.dog_card_item, viewGroup, false);
+        View itemView = mInflater.inflate(R.layout.kunu_dog_card, viewGroup, false);
+
+        itemView.findViewById(R.id.tv_dog_name).setOnClickListener(v -> {
+            mDogCardOnClickedListener.onDogItemClick((DogEntry) itemView.getTag());
+        });
         return new DogCardViewHolder(itemView);
     }
 
@@ -49,6 +59,7 @@ public class MainPagedAdapter extends PagedListAdapter<DogEntry, MainPagedAdapte
         if (dogEntry != null) {
             dogCardViewHolder.mTextView.setText(dogEntry.getName_cn());
             dogCardViewHolder.mImageView.setImageResource(R.drawable.snow_full);
+            dogCardViewHolder.itemView.setTag(dogEntry);
         }
         else {
             dogCardViewHolder.mTextView.setText("沒有資料");
@@ -66,13 +77,15 @@ public class MainPagedAdapter extends PagedListAdapter<DogEntry, MainPagedAdapte
         @Override
         public boolean areItemsTheSame(@NonNull /* old */ DogEntry dogEntry, @NonNull /* new */ DogEntry t1) {
             return dogEntry.getId() == t1.getId();
-//            return false;
         }
 
         @Override
         public boolean areContentsTheSame(@NonNull /* old */ DogEntry dogEntry, @NonNull /* new */ DogEntry t1) {
             return dogEntry.getName_cn().equals(t1.getName_cn());
-//            return false;
         }
     };
+
+    public void setDogCardOnClickedListener(DogCardOnClickedListener listener) {
+        this.mDogCardOnClickedListener = listener;
+    }
 }

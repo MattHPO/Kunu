@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.taipei.yanghaobo.kunu.data.KunuDatabase;
 import com.taipei.yanghaobo.kunu.data.KunuRepository;
-import com.taipei.yanghaobo.kunu.ui.MainVMFactory;
 
 public class InjectorUtils {
 

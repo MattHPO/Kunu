@@ -1,4 +1,4 @@
-package com.taipei.yanghaobo.kunu.ui;
+package com.taipei.yanghaobo.kunu;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
@@ -18,6 +18,6 @@ public class MainVMFactory extends ViewModelProvider.NewInstanceFactory {
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         //noinspection unchecked
-        return (T) new MainActivityVM(mKunuRepository);
+        return (T) new MainActivityViewModel(mKunuRepository);
     }
 }

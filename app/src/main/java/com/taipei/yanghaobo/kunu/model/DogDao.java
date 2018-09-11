@@ -15,6 +15,9 @@ public interface DogDao {
     @Query("SELECT * FROM dog_table ORDER BY id ASC")
     DataSource.Factory<Integer, DogEntry> getAll();
 
+    @Query("SELECT * FROM dog_table WHERE name_cn LIKE ('%' + :keyWord + '%') ")
+    DataSource.Factory<Integer, DogEntry> getUseName(String keyWord);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(DogEntry... dogEntries);
 
