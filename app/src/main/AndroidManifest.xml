@@ -1,43 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.taipei.yanghaobo.kunu">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/kunu_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.taipei.yanghaobo.kunu.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.DogDetailActivity" />
-
         <activity
-            android:name=".ui.SettingActivity"
+            android:name="com.taipei.yanghaobo.kunu.ui.SettingActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
+
         </activity>
 
-        <service android:name=".service.NotificationJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
         <service
-            android:name=".service.NotificationIntentService"
+            android:name="com.taipei.yanghaobo.kunu.service.NotificationJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE">
 
         </service>
+
+        <service
+            android:name="com.taipei.yanghaobo.kunu.service.NotificationJobIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
+        <service
+            android:name=".service.GoogleAPIJobIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
     </application>
 
 </manifest>

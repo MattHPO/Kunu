@@ -5,36 +5,44 @@
     android:id="@+id/card_dog_recycler_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
+    android:layout_margin="8dp"
     app:cardElevation="5dp"
-    android:background="@android:color/transparent" >
+    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardBackgroundColor="@android:color/white"
+    app:strokeColor="@color/divider">
 
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:padding="@dimen/basic_layout_padding">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/img_dog_photo"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/kunu_photo_dog"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dog_name"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/kunu_snow_shake" />
 
         <TextView
             android:id="@+id/tv_dog_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="狗狗名字"
+            android:text="@string/dog_name"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintEnd_toEndOf="@+id/img_dog_photo"
-            app:layout_constraintStart_toStartOf="@+id/img_dog_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/img_dog_photo"
+            app:layout_constraintStart_toStartOf="@id/img_dog_photo"
             app:layout_constraintTop_toBottomOf="@+id/img_dog_photo" />
 
     </android.support.constraint.ConstraintLayout>

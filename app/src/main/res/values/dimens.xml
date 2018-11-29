@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="basic_zero">-32dp</dimen>
+    <dimen name="basic_layout_padding">8dp</dimen>
+    <dimen name="grid_spacing">32dp</dimen>
+    <dimen name="basic_layout_margin">16dp</dimen>
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kunu_dog_detail_csl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    tools:showIn="@layout/kunu_dog_detail_fragment">
+
+    <ImageView
+        android:id="@+id/iv_dog_photo"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/dog_name"
+        android:scaleType="centerInside"
+        android:src="@drawable/kunu_snow_son"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/tv_dog_name_cn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dog_photo"
+        tools:text="狗狗名字" />
+
+    <TextView
+        android:id="@+id/tv_dog_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_nicknames"
+        tools:text="狗狗體型" />
+
+    <TextView
+        android:id="@+id/tv_dog_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_type"
+        tools:text="狗狗產地" />
+
+    <TextView
+        android:id="@+id/tv_dog_name_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_name_cn"
+        tools:text="狗狗英文名" />
+
+    <TextView
+        android:id="@+id/tv_dog_nicknames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_name_en"
+        tools:text="狗狗別名" />
+
+    <TextView
+        android:id="@+id/tv_dog_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/KunuStatusBarTextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_origin"
+        tools:text="狗狗資訊" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_edit_dog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:src="@drawable/kunu_edit_black"
+        android:tint="@color/primary_light"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:focusable="true" />
+
+</android.support.constraint.ConstraintLayout>

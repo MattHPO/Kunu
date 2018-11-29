@@ -7,6 +7,7 @@ import android.arch.persistence.room.TypeConverters;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.taipei.yanghaobo.kunu.data.DataConverters;
 
@@ -63,6 +64,7 @@ public class DogEntry implements Parcelable {
     /**
      * 狗狗資料更新日期
      */
+    @Nullable
     private Date update_dt;
 
     /**
@@ -70,7 +72,7 @@ public class DogEntry implements Parcelable {
      */
     private boolean is_valid;
 
-    public DogEntry(int id, String name_cn, String name_en, String other_names, String nicknames, String origin, String type, String info, int photo_id, Date update_dt, boolean is_valid) {
+    public DogEntry(int id, @NonNull String name_cn, String name_en, String other_names, String nicknames, String origin, String type, String info, int photo_id, Date update_dt, boolean is_valid) {
         this.id = id;
         this.name_cn = name_cn;
         this.name_en = name_en;
@@ -85,7 +87,7 @@ public class DogEntry implements Parcelable {
     }
 
     @Ignore
-    public DogEntry(String name_cn, String name_en, String other_names, String nicknames, String origin, String type, String info, int photo_id, Date update_dt, boolean is_valid) {
+    public DogEntry(@NonNull String name_cn, String name_en, String other_names, String nicknames, String origin, String type, String info, int photo_id, Date update_dt, boolean is_valid) {
         this.name_cn = name_cn;
         this.name_en = name_en;
         this.other_names = other_names;
@@ -98,11 +100,16 @@ public class DogEntry implements Parcelable {
         this.is_valid = is_valid;
     }
 
+    @Ignore
+    public DogEntry() {
+    }
+
     /** getters */
     public int getId() {
         return id;
     }
 
+    @NonNull
     public String getName_cn() {
         return name_cn;
     }
@@ -135,6 +142,7 @@ public class DogEntry implements Parcelable {
         return photo_id;
     }
 
+    @Nullable
     public Date getUpdate_dt() {
         return update_dt;
     }
@@ -143,13 +151,53 @@ public class DogEntry implements Parcelable {
         return is_valid;
     }
 
+    public void setName_cn(@NonNull String name_cn) {
+        this.name_cn = name_cn;
+    }
+
+    public void setName_en(String name_en) {
+        this.name_en = name_en;
+    }
+
+    public void setOther_names(String other_names) {
+        this.other_names = other_names;
+    }
+
+    public void setNicknames(String nicknames) {
+        this.nicknames = nicknames;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void setPhoto_id(int photo_id) {
+        this.photo_id = photo_id;
+    }
+
+    public void setUpdate_dt(@Nullable Date update_dt) {
+        this.update_dt = update_dt;
+    }
+
+    public void setIs_valid(boolean is_valid) {
+        this.is_valid = is_valid;
+    }
+
     @Override
     public int describeContents() {
         return 0;
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeInt(this.id);
         dest.writeString(this.name_cn);
         dest.writeString(this.name_en);
@@ -180,7 +228,7 @@ public class DogEntry implements Parcelable {
 
     public static final Parcelable.Creator<DogEntry> CREATOR = new Parcelable.Creator<DogEntry>() {
         @Override
-        public DogEntry createFromParcel(Parcel source) {
+        public DogEntry createFromParcel(@NonNull Parcel source) {
             return new DogEntry(source);
         }
 

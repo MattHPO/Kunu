@@ -8,10 +8,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.NonNull;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.taipei.yanghaobo.kunu.R;
 import com.taipei.yanghaobo.kunu.service.NotificationJobService;
@@ -19,9 +22,7 @@ import com.taipei.yanghaobo.kunu.service.NotificationJobService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * A {@link PreferenceFragmentCompat} subclass.
  */
 public class SettingFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -29,31 +30,21 @@ public class SettingFragment extends PreferenceFragmentCompat implements SharedP
 
     private static final int JOB_NOTIFICATION = 6;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment SettingFragment.
-     */
-    public static SettingFragment newInstance() {
-        SettingFragment fragment = new SettingFragment();
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PreferenceManager.setDefaultValues(getActivity(), R.xml.preferences, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onCreatePreferences(Bundle bundle, String rootKey) {
         setPreferencesFromResource(R.xml.preferences, rootKey);
+        PreferenceManager.setDefaultValues(getActivity(), R.xml.preferences, false);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    public void onSharedPreferenceChanged(@NonNull SharedPreferences sharedPreferences, @NonNull String key) {
         switch (key) {
             case KEY_PREF_NT:
 
@@ -97,7 +88,7 @@ public class SettingFragment extends PreferenceFragmentCompat implements SharedP
 //        String preferenceKey = preference.getKey();
 //        switch (preferenceKey){
 //            case KEY_PREF_NT:
-//                Toast.makeText(getActivity(), "狗狗通知開啟 !", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), "狗狗通知開啟 !", Toast.LENGTH_SHORT).show();
 //        }
         return false;
     }

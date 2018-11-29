@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/kunu_actions_settings"
+        android:icon="@drawable/kunu_settings_black"
+        android:title="@string/kunu_menu_settings"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom">
+
+    </item>
+</menu>

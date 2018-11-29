@@ -7,11 +7,12 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.taipei.yanghaobo.kunu.R;
 import com.taipei.yanghaobo.kunu.db.DogEntry;
-import com.taipei.yanghaobo.kunu.model.DogDao;
+import com.taipei.yanghaobo.kunu.db.DogDao;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,14 +24,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Date;
 
-@Database(entities = {DogEntry.class}, version = 1)
+
+@Database(entities = {DogEntry.class}, version = 1, exportSchema = false)
 public abstract class KunuDatabase extends RoomDatabase {
 
     private static final String TAG = "Matt" + KunuDatabase.class.getSimpleName();
 
     public static final String DB_NAME = "Kunu.db";
 
-    public abstract DogDao DogDao();
+    public abstract DogDao getDogDao();
 
     private static KunuDatabase INSTANCE;
 
@@ -38,7 +40,7 @@ public abstract class KunuDatabase extends RoomDatabase {
 
     private static Context sContext;
 
-    public static KunuDatabase getInstance(Context context) {
+    public static KunuDatabase getInstance(@NonNull Context context) {
         if (INSTANCE == null) {
             synchronized (LOCK) {
                 if (INSTANCE == null) {
@@ -56,10 +58,10 @@ public abstract class KunuDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-
     /**
      * Kunu.db - DB Callback
      */
+    @NonNull
     private static Callback sDogDbCallback = new Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
@@ -83,9 +85,10 @@ public abstract class KunuDatabase extends RoomDatabase {
         private DogDao mDogDao;
 
         PopulateDBAsync(KunuDatabase kunuDatabase) {
-            this.mDogDao = kunuDatabase.DogDao();
+            this.mDogDao = kunuDatabase.getDogDao();
         }
 
+        @Nullable
         @Override
         protected Void doInBackground(Void... voids) {
 
@@ -119,11 +122,12 @@ public abstract class KunuDatabase extends RoomDatabase {
                             element.getBoolean("is_valid")));
                 }
             }
-            catch (IOException | JSONException ie){
+            catch (@NonNull IOException | JSONException ie){
                 ie.printStackTrace();
             }
 
             return null;
         }
     }
+
 }

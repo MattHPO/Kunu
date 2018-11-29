@@ -1,13 +1,44 @@
 <resources>
     <string name="kunu_app_name">Kunu</string>
     <string name="kunu_photo_dog">狗狗們的萌照</string>
-    <string name="kunu_favorite_dog">最愛的狗狗</string>
-    <string name="kunu_game_dog">認識狗狗們</string>
-    <string name="kunu_stock_dog">賺錢養狗狗</string>
-    <string name="kunu_settings">設定</string>
+    <string name="kunu_favorite_dog">最愛的狗狗們</string>
+    <string name="kunu_game_dog">誰是狗主人</string>
+    <string name="kunu_money_dog">賺錢養狗狗</string>
+    <string name="kunu_detail_dog">狗狗詳情</string>
+    <string name="kunu_menu_settings">設定</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="kunu_settings_info">說明</string>
+    <string name="hello_blank_fragment">Empty Frag! Work hard!</string>
+
+    <string name="kunu_menu_info">說明</string>
     <string name="kunu_pref_nt">每日狗狗賣萌通知</string>
+    <string name="kunu_doglist">狗狗列表</string>
+    <string name="dog_name">狗狗名字</string>
+    <string name="kunu_menu_layout_type">顯示</string>
+    <string name="input_query_word">輸入狗狗名字關鍵字吧！</string>
+    <string name="query">查詢！</string>
+    <string name="query_error">請別輸入空白！狗狗會難過</string>
+    <string name="input_something">輸入點什麼吧～</string>
+    <string name="update">更新</string>
+    <string name="kunu_label_nicknames">其他尊稱 :</string>
+    <string name="kunu_label_name_cn">主人尊稱</string>
+    <string name="kunu_label_name_en">主人英文名 :</string>
+    <string name="kunu_label_type">體型 :</string>
+    <string name="kunu_label_origin">產地 :</string>
+    <string name="kunu_label_info">關於這種主人 :</string>
+    <string name="dog_info_null">等你補齊囉！</string>
+    <string name="hint_name_cn">想清楚喔奴才！</string>
+    <string name="hint_type">大 中 小</string>
+    <string name="hint_origin">主人與他們的產地</string>
+    <string name="hint_name_en">English name</string>
+    <string name="hint_nicknames">e.g. 柴柴、月月</string>
+    <string name="hint_info">輸入有關於狗狗的一切吧！</string>
+    <string name="title_find_book">找本狗狗的書來學習相關知識吧</string>
+    <string name="kunu_learn_dog">瞭解狗狗</string>
+    <string name="kunu_query_dog">查詢狗狗</string>
+    <string name="fetch_data_fail">取得失敗。</string>
+    <string name="input_query_book_word">輸入狗狗書本關鍵字吧！</string>
+    <string name="error_no_internet">沒有網路連線。</string>
+    <string name="error_hint_no_internet">去連接網路吧！</string>
+    <string name="query_google_book">搜尋 Google Book!</string>
+    <string name="query_from_google_book">從 Google Book 查詢</string>
 </resources>

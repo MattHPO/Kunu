@@ -3,9 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/kunu_menu_layout_type"
+        android:icon="@drawable/kunu_grid_list_icon"
+        android:title="@string/kunu_menu_layout_type"
+        android:orderInCategory="9"
+        app:showAsAction="always">
+    </item>
+
+    <item
         android:id="@+id/kunu_actions_settings"
         android:icon="@drawable/kunu_settings_black"
-        android:title="@string/kunu_settings"
+        android:title="@string/kunu_menu_settings"
         android:orderInCategory="10"
         app:showAsAction="ifRoom">
 
@@ -14,8 +22,8 @@
     <item
         android:id="@+id/kunu_actions_info"
         android:icon="@drawable/kunu_heart_black"
-        android:orderInCategory="9"
-        android:title="@string/kunu_settings_info"
+        android:orderInCategory="11"
+        android:title="@string/kunu_menu_info"
         app:showAsAction="never">
 
     </item>

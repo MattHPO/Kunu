@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_dog_gridFrag">
+
+    <fragment
+        android:id="@+id/nav_dog_gridFrag"
+        android:name="com.taipei.yanghaobo.kunu.ui.list.DogGridFragment"
+        android:label="Master list"
+        tools:layout="@layout/kunu_dog_grid_fragment">
+
+        <action
+            android:id="@+id/action_dogGridFragment_to_dogDetailFragment"
+            app:destination="@id/dogDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_dogGridFragment_to_settingActivity"
+            app:destination="@id/settingActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_favorite_frag"
+        android:name="com.taipei.yanghaobo.kunu.ui.FavoriteDogListFragment"
+        android:label="@string/kunu_favorite_dog"
+        tools:layout="@layout/fragment_favorite_dog_list">
+    </fragment>
+
+    <fragment
+        android:id="@+id/dogDetailFragment"
+        android:name="com.taipei.yanghaobo.kunu.ui.detail.DogDetailFragment"
+        android:label="@string/kunu_detail_dog"
+        tools:layout="@layout/kunu_dog_detail_fragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_dogDetailFragment_to_dogDetailEditFragment"
+            app:destination="@id/dogDetailEditFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <activity
+        android:id="@+id/settingActivity"
+        android:name="com.taipei.yanghaobo.kunu.ui.SettingActivity"
+        android:label="@string/kunu_menu_settings"
+        tools:layout="@layout/kunu_setting_activity" />
+    <fragment
+        android:id="@+id/nav_search_frag"
+        android:name="com.taipei.yanghaobo.kunu.ui.search.SearchFragment"
+        android:label="@string/kunu_query_dog"
+        tools:layout="@layout/fragment_search_dog" />
+    <fragment
+        android:id="@+id/nav_game_frag"
+        android:name="com.taipei.yanghaobo.kunu.ui.API.DogAPIFragment"
+        android:label="@string/kunu_learn_dog"
+        tools:layout="@layout/fragment_google_api" />
+    <action
+        android:id="@+id/action_global_dog_gridFragment"
+        app:destination="@id/nav_dog_gridFrag"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/dogDetailEditFragment"
+        android:name="com.taipei.yanghaobo.kunu.ui.edit.DogDetailEditFragment"
+        android:label="dog_detail_edit_fragment"
+        tools:layout="@layout/dog_detail_edit_fragment">
+
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.edit.DogDetailEditFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/basic_layout_margin"
+        android:fillViewport="true">
+
+        <include layout="@layout/kunu_dog_detail_edit_layout" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

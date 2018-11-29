@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds" >false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="KunuElevatedCoordinatorLayout" parent="Widget.Support.CoordinatorLayout">
+        <item name="elevation">8dp</item>
+    </style>
+
+    <!-- 標題文字 -->
+    <style name="KunuHeadTextTextAppearance" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <!-- 狀態列文字 -->
+    <style name="KunuStatusBarTextAppearance" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="KunuSubtitleTextAppearance" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!-- 基本 toolbar 樣式，mapping 到 layout/kunu_basic_toolbar -->
+    <!--<style name="kunuToolbarBasic" parent="Base.V7.Widget.AppCompat.Toolbar">-->
+        <!--<item name="background">@color/colorPrimary</item>-->
+    <!--</style>-->
+</resources>

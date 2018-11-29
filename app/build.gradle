@@ -8,7 +8,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -16,6 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding.enabled = true
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -26,7 +29,9 @@ dependencies {
     def lifecycle_version = "1.1.1"
     def room_version = "1.1.1"
     def paging_version = "1.0.1"
-    def support_version = '28.0.0-rc01'
+    def support_version = '28.0.0'
+    def nav_version = "1.0.0-alpha07"
+    def espresso_version = "3.0.2"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:$support_version"
@@ -34,11 +39,21 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$support_version"
     implementation "com.android.support:cardview-v7:$support_version"
     implementation "com.android.support:preference-v7:$support_version"
+    implementation "com.android.support:palette-v7:$support_version"
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
     testImplementation 'junit:junit:4.12'
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+    // Espresso UI Testing dependencies.
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espresso_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espresso_version"
 
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
@@ -57,5 +72,13 @@ dependencies {
     implementation "android.arch.paging:runtime:$paging_version"
     // alternatively - without Android dependencies for testing
     testImplementation "android.arch.paging:common:$paging_version"
-    implementation 'com.android.support:support-v4:28.0.0-rc01'
+    implementation "com.android.support:support-v4:$support_version"
+
+    implementation "android.arch.navigation:navigation-fragment:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui:$nav_version" // use -ktx for Kotlin
+    // optional - Test helpers
+    androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version"
+    // use -ktx for Kotlin
+    apply plugin: "androidx.navigation.safeargs"
+
 }

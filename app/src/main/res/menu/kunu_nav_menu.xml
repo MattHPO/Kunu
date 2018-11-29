@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+
+        <item
+            android:id="@+id/nav_dog_gridFrag"
+            android:title="@string/kunu_doglist"
+            android:icon="@drawable/kunu_home_black">
+        </item>
+
+        <item
+            android:id="@+id/nav_favorite_frag"
+            android:title="@string/kunu_favorite_dog"
+            android:icon="@drawable/kunu_heart_black">
+        </item>
+
+        <item
+            android:id="@+id/nav_game_frag"
+            android:title="@string/kunu_learn_dog"
+            android:icon="@drawable/kunu_valid_black">
+        </item>
+
+        <item
+            android:id="@+id/nav_search_frag"
+            android:title="@string/kunu_query_dog"
+            android:icon="@drawable/kunu_search_black">
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update">更新</string>
+    <string name="kunu_label_nicknames">其他尊稱 :</string>
+    <string name="kunu_label_name_cn">主人尊稱</string>
+    <string name="kunu_label_name_en">主人英文名 :</string>
+    <string name="kunu_label_type">體型 :</string>
+    <string name="kunu_label_origin">產地 :</string>
+    <string name="kunu_label_info">關於這種主人 :</string>
+    <string name="dog_info_null">等你補齊囉！</string>
+    <string name="hint_name_cn">想清楚喔奴才！</string>
+    <string name="hint_type">大 中 小</string>
+    <string name="hint_origin">主人與他們的產地</string>
+    <string name="hint_name_en">English name</string>
+    <string name="hint_nicknames">e.g. 柴柴、月月</string>
+    <string name="hint_info">輸入有關於狗狗的一切吧！</string>
+    <string name="title_find_book">從Google Book找本狗狗的書來學習相關知識吧</string>
+    <string name="kunu_learn_dog">瞭解狗狗</string>
+    <string name="kunu_query_dog">查詢狗狗</string>
+    <string name="fetch_data_fail">取得失敗。</string>
+    <string name="input_query_book_word">輸入狗狗書本關鍵字吧！</string>
+    <string name="error_no_internet">沒有網路連線。</string>
+    <string name="error_hint_no_internet">去連接網路吧！</string>
+    <string name="query_google_book">搜尋 Google Book!</string>
+    <string name="query_from_google_book">從 Google Book 查詢</string>
+</resources>

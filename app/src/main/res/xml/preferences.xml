@@ -2,6 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <SwitchPreference
+        android:id="@+id/pref_nt_switch"
         android:defaultValue="false"
         android:key="pref_notificationSwitch"
         android:title="@string/kunu_pref_nt" />

@@ -3,14 +3,16 @@ package com.taipei.yanghaobo.kunu.service;
 import android.annotation.TargetApi;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
+import android.content.Intent;
 import android.os.Build;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class NotificationJobService extends JobService {
     @Override
     public boolean onStartJob(JobParameters params) {
-
-        NotificationIntentService.startActionDailyNt(getApplicationContext());
+        // 啟動 JobIntentService
+        Intent jobIntent = NotificationJobIntentService.getJobIntent();
+        NotificationJobIntentService.enqueueWork(getApplicationContext(), jobIntent);
 //        N 需要此才能進行 週期排程
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N &&
                 Build.VERSION.SDK_INT < Build.VERSION_CODES.O){
