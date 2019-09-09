@@ -1,8 +1,7 @@
 # Kunu
-Kunu App
+Kunu App - 用於練習 Architecture Components.
 
 ------Todo list------
-1. 狗狗名稱搜尋功能
-2. 使用 Martial Design Components 進行 ui 優化
-3. 狗狗品種選擇題小遊戲
-4. Navigation function
+1. 狗狗選擇小遊戲
+2. Material Design Principle
+3. 想功能
