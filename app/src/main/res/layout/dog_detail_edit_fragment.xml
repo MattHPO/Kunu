@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.edit.DogDetailEditFragment">
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/basic_layout_margin"
@@ -13,6 +13,6 @@
 
         <include layout="@layout/kunu_dog_detail_edit_layout" />
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

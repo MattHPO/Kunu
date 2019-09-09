@@ -12,13 +12,14 @@
         <item
             android:id="@+id/nav_favorite_frag"
             android:title="@string/kunu_favorite_dog"
-            android:icon="@drawable/kunu_heart_black">
+            android:icon="@drawable/kunu_heart_black"
+            >
         </item>
 
         <item
             android:id="@+id/nav_game_frag"
             android:title="@string/kunu_learn_dog"
-            android:icon="@drawable/kunu_valid_black">
+            android:icon="@drawable/kunu_edit_red">
         </item>
 
         <item
